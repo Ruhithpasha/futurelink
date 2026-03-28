@@ -1,0 +1,13 @@
+{
+  "name": "mern-flow-ai-app",
+  "version": "1.0.0",
+  "description": "Full-stack MERN flow AI application with structured backend.",
+  "scripts": {
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
