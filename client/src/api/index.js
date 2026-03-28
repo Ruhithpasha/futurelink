@@ -1,7 +1,11 @@
 import axios from 'axios';
 
+// Ensure the URL always ends with /api even if not provided in env
+const rawBaseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+const baseUrlWithApi = rawBaseUrl.endsWith('/api') ? rawBaseUrl : `${rawBaseUrl.replace(/\/$/, '')}/api`;
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5001/api',
+  baseURL: baseUrlWithApi,
 });
 
 export const askAI = async (prompt) => {
